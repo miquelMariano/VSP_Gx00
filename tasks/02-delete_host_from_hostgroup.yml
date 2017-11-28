@@ -7,4 +7,6 @@
       - { port: cl2-c-1, wwn: 100042d70ac00040, inst: 300}
       - { port: cl1-d-1, wwn: 100042d70ac00042, inst: 300}
       - { port: cl1-d-3, wwn: 100042d70ac00042, inst: 301}
+
+# raidcom get hba_wwn -port cl1-d-3 -I301
     
