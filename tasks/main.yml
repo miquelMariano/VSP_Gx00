@@ -9,7 +9,7 @@
     - add_host | default(false)
   tags: add_host
 
-  - include: 02-delete_host_from_hostgroup.yml
+- include: 02-delete_host_from_hostgroup.yml
   when:
     - delete_host | default(false)
   tags: delete_host
