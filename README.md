@@ -49,7 +49,7 @@ Usage
 -------
 
 ```
-ansible-playbook playbooks/VSP_Gx00_ops.yml -e "add_host=true" --tags lock,nickname,unlock
+ansible-playbook playbooks/VSP_Gx00_ops.yml -e "update_mode=true" --tags update,lock,unlock
 ```
 
 License
