@@ -1,0 +1,14 @@
+---
+# tasks file for VSP_Gx00
+
+- include: 00-lockresource.yml
+  tags: lock
+
+- include: 01-add_host_to_hostgroup.yml
+  when:
+    - add_host | default(false)
+  tags: add_host
+
+- include: 99-unlockresource.yml
+  tags: unlock
+
