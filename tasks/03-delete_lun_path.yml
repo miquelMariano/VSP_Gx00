@@ -1,0 +1,14 @@
+---
+- name: Delete lun path
+  command: raidcom delete lun -port {{ item.port }} -ldev_id {{ item.ldev_id }} -I{{item.inst}}
+  with_items:
+     - "{{ luns }}"
+  ignore_errors: yes
+
+
+#- name: Debug
+#  debug: 
+#    var: "{{ item.port }}" 
+#  with_items: 
+#    - "{{ ports }}"
+

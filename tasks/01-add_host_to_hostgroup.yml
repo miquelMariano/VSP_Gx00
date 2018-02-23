@@ -3,25 +3,18 @@
 - name: Add host to hostgroup
   command: raidcom add hba_wwn -port {{ item.port }} -hba_wwn {{ item.wwn }} -I{{item.inst}}
   with_items:
-      - { port: cl2-m-1, wwn: 100042d70ac0002a, inst: 300}
-      - { port: cl4-l-1, wwn: 100042d70ac00032, inst: 300}
-      - { port: cl2-l-1, wwn: 100042d70ac0003e, inst: 300}
+      - { port: cl2-c-1, wwn: 100042d70ac00040, inst: 300}
       - { port: cl1-d-1, wwn: 100042d70ac00042, inst: 300}
-      - { port: cl3-d-1, wwn: 100042d70ac0004e, inst: 300}
+      - { port: cl2-c-3, wwn: 100042d70ac00040, inst: 301}
+      - { port: cl1-d-3, wwn: 100042d70ac00042, inst: 301}
 
 - name: Change nickname to host
   command: raidcom set hba_wwn -port {{ item.port }} -hba_wwn {{ item.wwn }} -wwn_nickname {{ item.nickname }} -I{{item.inst}}
   with_items:
-      - { port: cl2-m-3, wwn: 100042d70ac0002a, nickname: LOGGSCH05BL04_Port02, inst: 301}
-      - { port: cl4-l-3, wwn: 100042d70ac00032, nickname: LOGGSCH05BL05_Port02, inst: 301}
-      - { port: cl2-l-3, wwn: 100042d70ac0003e, nickname: LOGGSCH05BL06_Port02, inst: 301}
+      - { port: cl2-c-1, wwn: 100042d70ac00040, nickname: LOGGSCH05BL07_Port01, inst: 300}
+      - { port: cl1-d-1, wwn: 100042d70ac00042, nickname: LOGGSCH05BL07_Port02, inst: 300}
+      - { port: cl2-c-3, wwn: 100042d70ac00040, nickname: LOGGSCH05BL07_Port01, inst: 301}
       - { port: cl1-d-3, wwn: 100042d70ac00042, nickname: LOGGSCH05BL07_Port02, inst: 301}
-      - { port: cl3-d-3, wwn: 100042d70ac0004e, nickname: LOGGSCH05BL08_Port02, inst: 301}
-      - { port: cl1-l-3, wwn: 100042d70ac00056, nickname: LOGGSCH05BL09_Port02, inst: 301}
-      - { port: cl3-l-3, wwn: 100042d70ac00012, nickname: LOGGSCH05BL01_Port02, inst: 301}
-      - { port: cl3-l-3, wwn: 100042d70ac0005e, nickname: LOGGSCH05BL10_Port02, inst: 301}
-      - { port: cl1-m-3, wwn: 100042d70ac0001e, nickname: LOGGSCH05BL02_Port02, inst: 301}
-      - { port: cl3-m-3, wwn: 100042d70ac00022, nickname: LOGGSCH05BL03_Port02, inst: 301}
   tags: nickname
 
 #raidcom set hba_wwn -port cl4-l-10 -hba_wwn 50060b0000c2720a -wwn_nickname LOGIXCH01BL03_Port02 -I11

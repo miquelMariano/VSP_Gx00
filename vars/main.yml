@@ -1,5 +1,57 @@
 ---
 # vars file for VSP_Gx00
 
-inst_1: 300
-inst_2: 301
+#inst_1: 300
+#inst_2: 301
+ldev_id: 20:ff
+inst: 300
+
+# vars for task 02-delete_host_from_hostgroup
+ports:
+  - { port: cl2-c-3, wwn: 100042d70ac00040, inst: 301}
+  - { port: cl2-c-1, wwn: 100042d70ac00040, inst: 300}
+  - { port: cl1-d-1, wwn: 100042d70ac00042, inst: 300}
+  - { port: cl1-d-3, wwn: 100042d70ac00042, inst: 301}
+
+#vars for task 03-delete_lun_path
+luns:
+  - { port: CL2-M-3, ldev_id: "{{ ldev_id }}", inst: "{{ inst }}" }
+  - { port: CL1-D-1, ldev_id: "{{ ldev_id }}", inst: "{{ inst }}" }
+  - { port: CL2-M-1, ldev_id: "{{ ldev_id }}", inst: "{{ inst }}" }
+  - { port: CL4-L-3, ldev_id: "{{ ldev_id }}", inst: "{{ inst }}" }
+  - { port: CL4-L-1, ldev_id: "{{ ldev_id }}", inst: "{{ inst }}" }
+  - { port: CL2-L-3, ldev_id: "{{ ldev_id }}", inst: "{{ inst }}" }
+  - { port: CL2-L-1, ldev_id: "{{ ldev_id }}", inst: "{{ inst }}" }
+  - { port: CL4-K-3, ldev_id: "{{ ldev_id }}", inst: "{{ inst }}" }
+  - { port: CL4-K-1, ldev_id: "{{ ldev_id }}", inst: "{{ inst }}" }
+  - { port: CL2-K-3, ldev_id: "{{ ldev_id }}", inst: "{{ inst }}" }
+  - { port: CL2-K-1, ldev_id: "{{ ldev_id }}", inst: "{{ inst }}" }
+  - { port: CL4-J-3, ldev_id: "{{ ldev_id }}", inst: "{{ inst }}" }
+  - { port: CL4-J-1, ldev_id: "{{ ldev_id }}", inst: "{{ inst }}" }
+  - { port: CL2-J-3, ldev_id: "{{ ldev_id }}", inst: "{{ inst }}" }
+  - { port: CL2-J-1, ldev_id: "{{ ldev_id }}", inst: "{{ inst }}" }
+  - { port: CL4-C-3, ldev_id: "{{ ldev_id }}", inst: "{{ inst }}" }
+  - { port: CL4-C-1, ldev_id: "{{ ldev_id }}", inst: "{{ inst }}" }
+  - { port: CL2-C-3, ldev_id: "{{ ldev_id }}", inst: "{{ inst }}" }
+  - { port: CL2-C-1, ldev_id: "{{ ldev_id }}", inst: "{{ inst }}" }
+  - { port: CL3-M-3, ldev_id: "{{ ldev_id }}", inst: "{{ inst }}" }
+  - { port: CL3-M-1, ldev_id: "{{ ldev_id }}", inst: "{{ inst }}" }
+  - { port: CL1-M-3, ldev_id: "{{ ldev_id }}", inst: "{{ inst }}" }
+  - { port: CL1-M-1, ldev_id: "{{ ldev_id }}", inst: "{{ inst }}" }
+  - { port: CL3-L-3, ldev_id: "{{ ldev_id }}", inst: "{{ inst }}" }
+  - { port: CL3-L-1, ldev_id: "{{ ldev_id }}", inst: "{{ inst }}" }
+  - { port: CL1-L-3, ldev_id: "{{ ldev_id }}", inst: "{{ inst }}" }
+  - { port: CL1-L-1, ldev_id: "{{ ldev_id }}", inst: "{{ inst }}" }
+  - { port: CL1-K-3, ldev_id: "{{ ldev_id }}", inst: "{{ inst }}" }
+  - { port: CL1-K-1, ldev_id: "{{ ldev_id }}", inst: "{{ inst }}" }
+  - { port: CL3-J-3, ldev_id: "{{ ldev_id }}", inst: "{{ inst }}" }
+  - { port: CL3-J-1, ldev_id: "{{ ldev_id }}", inst: "{{ inst }}" }
+  - { port: CL1-J-3, ldev_id: "{{ ldev_id }}", inst: "{{ inst }}" }
+  - { port: CL1-J-1, ldev_id: "{{ ldev_id }}", inst: "{{ inst }}" }
+  - { port: CL3-D-3, ldev_id: "{{ ldev_id }}", inst: "{{ inst }}" }
+  - { port: CL3-D-1, ldev_id: "{{ ldev_id }}", inst: "{{ inst }}" }
+  - { port: CL1-D-3, ldev_id: "{{ ldev_id }}", inst: "{{ inst }}" }
+
+#vars for task 04-delete_ldev
+ldev:
+  - { ldev_id: "{{ ldev_id }}", inst: "{{ inst }}" }

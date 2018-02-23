@@ -50,6 +50,10 @@ Usage
 
 ```
 ansible-playbook playbooks/VSP_Gx00_ops.yml -e "update_mode=true" --tags update,lock,unlock
+
+or
+
+ansible-playbook playbooks/VSP_Gx00_ops.yml -e "delete_ldev=true" --tags lock,delete_ldev,unlock
 ```
 
 License

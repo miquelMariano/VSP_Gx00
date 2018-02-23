@@ -1,0 +1,7 @@
+---
+
+- name: Delete LDEV
+  command: raidcom delete ldev -ldev_id {{ item.ldev_id }} -I{{item.inst}}
+  with_items:
+     - "{{ ldev }}"
+  ignore_errors: yes

@@ -1,12 +1,17 @@
 ---
 
-- name: Delete host from hostgroup
-  command: raidcom delete hba_wwn -port {{ item.port }} -hba_wwn {{ item.wwn }} -I{{item.inst}}
-  with_items:
-      - { port: cl2-c-3, wwn: 100042d70ac00040, inst: 301}
-      - { port: cl2-c-1, wwn: 100042d70ac00040, inst: 300}
-      - { port: cl1-d-1, wwn: 100042d70ac00042, inst: 300}
-      - { port: cl1-d-3, wwn: 100042d70ac00042, inst: 301}
+#- name: Delete host from hostgroup
+#  command: raidcom delete hba_wwn -port {{ item.port }} -hba_wwn {{ item.wwn }} -I{{item.inst}}
+#  with_items:
+#      - { port: cl2-c-3, wwn: 100042d70ac00040, inst: 301}
+#      - { port: cl2-c-1, wwn: 100042d70ac00040, inst: 300}
+#      - { port: cl1-d-1, wwn: 100042d70ac00042, inst: 300}
+#      - { port: cl1-d-3, wwn: 100042d70ac00042, inst: 301}
 
-# raidcom get hba_wwn -port cl1-d-3 -I301
+- name: Debug
+  debug: 
+    var: "{{ item.port }}" 
+  with_items: 
+    - "{{ ports }}"
+
     

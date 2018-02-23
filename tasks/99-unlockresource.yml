@@ -3,5 +3,6 @@
 - name: Unlock resource
   command: raidcom unlock resource -I{{ item }}
   with_items:
-      - "{{ inst_1 }}"
-      - "{{ inst_2 }}"
+      - "{{ inst }}"
+#      - "{{ inst_1 }}"
+#      - "{{ inst_2 }}"

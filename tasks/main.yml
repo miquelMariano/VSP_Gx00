@@ -14,6 +14,16 @@
     - delete_host | default(false)
   tags: delete_host
 
+- include: 03-delete_lun_path.yml
+  when:
+    - delete_lun_path | default(false)
+  tags: delete_lun_path
+
+- include: 04-delete_ldev.yml
+  when:
+    - delete_ldev | default(false)
+  tags: delete_ldev
+
 - include: 99-unlockresource.yml
   tags: unlock
 
