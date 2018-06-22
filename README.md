@@ -70,7 +70,7 @@ ansible-playbook playbooks/VSP_Gx00_ops.yml -e "delete_lun_path=true ldev_id=09:
 
 04-delete_ldev
 ```
-ansible-playbook playbooks/VSP_Gx00_ops.yml -e "delete_ldev=true" --tags lock,delete_ldev,unlock
+ansible-playbook playbooks/VSP_Gx00_ops.yml -e "delete_ldev=true ldev_id=09:00 inst=1" --tags lock,delete_ldev,unlock
 ```
 
 License
