@@ -11,7 +11,7 @@ No requirements
 Role Variables
 --------------
 
-View vars/main.yml
+All variables defined on vars/main.yml
 
 Dependencies
 ------------
@@ -48,11 +48,28 @@ Example Playbook
 Usage
 -------
 
+00-lockresource | Update role and lock/unlock resources
 ```
 ansible-playbook playbooks/VSP_Gx00_ops.yml -e "update_mode=true" --tags update,lock,unlock
+```
 
-or
+01-add_host_to_hostgroup
+```
+pending...
+```
 
+02-delete_host_from_hostgroup
+```
+ansible-playbook playbooks/VSP_Gx00_ops.yml -e "delete_host=true" --tags lock,delete_host,unlock
+```
+
+03-delete_lun_path
+```
+ansible-playbook playbooks/VSP_Gx00_ops.yml -e "delete_lun_path=true" --tags lock,delete_lun_path,unlock
+```
+
+04-delete_ldev
+```
 ansible-playbook playbooks/VSP_Gx00_ops.yml -e "delete_ldev=true" --tags lock,delete_ldev,unlock
 ```
 
