@@ -3,6 +3,5 @@
 - name: Lock resource
   command: raidcom lock resource -I{{ item }}
   with_items:
-#      - "{{ inst_1 }}"
-#      - "{{ inst_2 }}"
+      - "{{ inst_2 }}"
       - "{{ inst }}"
