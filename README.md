@@ -65,7 +65,7 @@ ansible-playbook playbooks/VSP_Gx00_ops.yml -e "delete_host=true" --tags lock,de
 
 03-delete_lun_path
 ```
-ansible-playbook playbooks/VSP_Gx00_ops.yml -e "delete_lun_path=true" --tags lock,delete_lun_path,unlock
+ansible-playbook playbooks/VSP_Gx00_ops.yml -e "delete_lun_path=true ldev_id=09:00 inst=1" --tags lock,delete_lun_path,unlock
 ```
 
 04-delete_ldev
